@@ -30,7 +30,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 			Department dept=opt.get();
 			List<Employee> li= dept.getEmployees();
 			li.add(emp);
-//			emp.setDept(dept);
+			emp.setDept(dept);
 			return emprep.save(emp);
 		}
 		throw new DepartmentException("Department doesnt exists");
