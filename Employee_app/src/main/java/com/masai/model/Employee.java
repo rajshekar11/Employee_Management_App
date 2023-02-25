@@ -1,5 +1,7 @@
 package com.masai.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -28,7 +30,7 @@ public class Employee {
 	@Embedded
 	private Address address;
 	
-	
+	@JsonIgnore
 	@ManyToOne
 	private Department dept;
 	
