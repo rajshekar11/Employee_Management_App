@@ -1,9 +1,5 @@
 package com.masai.model;
 
-import java.time.LocalDate;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -12,7 +8,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 
@@ -33,7 +28,7 @@ public class Employee {
 	@Embedded
 	private Address address;
 	
-	@JsonIgnore
+	
 	@ManyToOne
 	private Department dept;
 	

@@ -1,12 +1,14 @@
 package com.masai.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.masai.exceptions.DepartmentException;
 import com.masai.model.Department;
 import com.masai.repository.DepartmentRepository;
 import com.masai.repository.EmployeeRepository;
 
+@Service
 public class DepartmentServiceImpl implements DepartmentService {
 	
 	@Autowired

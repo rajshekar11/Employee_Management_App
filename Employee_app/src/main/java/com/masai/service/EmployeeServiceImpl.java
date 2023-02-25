@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.masai.exceptions.DepartmentException;
 import com.masai.exceptions.EmployeeException;
@@ -12,6 +13,7 @@ import com.masai.model.Employee;
 import com.masai.repository.DepartmentRepository;
 import com.masai.repository.EmployeeRepository;
 
+@Service
 public class EmployeeServiceImpl implements EmployeeService {
 	
 	@Autowired
@@ -28,7 +30,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 			Department dept=opt.get();
 			List<Employee> li= dept.getEmployees();
 			li.add(emp);
-			emp.setDept(dept);
+//			emp.setDept(dept);
 			return emprep.save(emp);
 		}
 		throw new DepartmentException("Department doesnt exists");

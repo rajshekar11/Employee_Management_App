@@ -1,5 +1,6 @@
 package com.masai.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -22,9 +23,7 @@ public class Department {
 	private Integer deptNo;
 	private String deptName;
 	private Integer maxEmployee;
-	private Employee headOfDept;
-	@JsonIgnore
-	@OneToMany(mappedBy = "dept",cascade = CascadeType.ALL)
-	private List<Employee> employees;
+	@OneToMany(mappedBy = "dept", cascade = CascadeType.ALL)
+	private List<Employee> employees= new ArrayList<>();
 	
 }
