@@ -29,14 +29,14 @@ public class MyController {
 	@Autowired
 	private DepartmentService depts;
 	
-	@PostMapping("/dept2")
+	@PostMapping("/deptwithoutemployee")
 	public ResponseEntity<Department> addDepartmentWithoutEmployees(@RequestBody Department dept) throws  DepartmentException{
 		Department sdept= depts.addDepartmentWithoutEmployees(dept);
 		
 		return new ResponseEntity<Department>(sdept,HttpStatus.CREATED);
 	}
 	
-	@PostMapping("/dept")
+	@PostMapping("/deptwithemployee")
 	public ResponseEntity<Department> addDepartmentWithEmployees(@RequestBody Department dept) throws  DepartmentException{
 		Department sdept= depts.addDepartmentWithEmployees(dept);
 		
